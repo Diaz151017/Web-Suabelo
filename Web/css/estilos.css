@@ -9,7 +9,7 @@ html {
 /* VARIABLES CSS (PALETA DE COLORES) */
 :root {
     --color-primary: #ffffff;   /* Color principal (blanco) */
-    --color-bg-light: #352471;  /* Fondo principal (morado oscuro) */
+    --color-bg-light: #C25875;  /* Fondo principal (morado oscuro) */
     --color-bg-grey: #e6e6e6;   /* Fondo secundario (gris claro) */  
     --color-text: #ffffff;      /* Color de texto base (blanco) */
     --font-main: Arial, sans-serif;   /* Fuente principal del sitio */
@@ -60,16 +60,25 @@ header h1 {
 
 /* MENÚ DE NAVEGACIÓN */
 .menu_navegacion {
-    display: flex;              /* Elementos en fila flexible */
-    justify-content: center;    /* Centrado horizontal de los enlaces */
-    flex-wrap: wrap;            /* Permite saltar de línea en pantallas pequeñas */
-    gap: 10px;                  /* Espacio entre los botones */
-    align-items: center;        /* Alineación vertical al centro */
-    padding: 12px 30px;         /* Relleno interno del menú */
-    border-radius: 50px;        /* Bordes totalmente redondeados */
-    background: white;          /* Fondo blanco para contraste */
-    width: fit-content;         /* El ancho se ajusta al contenido, no ocupa todo */
-    margin: 0 auto;             /* Centrado del bloque en la pantalla */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    padding: 15px 0; /* Un poco más de aire arriba y abajo */
+    background: white;
+    
+    /* EL TRUCO PARA LLEGAR A LOS BORDES */
+    width: 100vw;           /* 100% del ancho de la ventana */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;     /* Desplazamiento calculado para centrar */
+    margin-right: -50vw;
+    
+    border-radius: 0;       /* Fuera bordes redondeados, queremos una línea recta */
+    margin-top: 20px;       /* Espacio con el logo */
+    margin-bottom: 40px;    /* Espacio con el título inferior */
 }
 
 .menu_navegacion a {
@@ -122,6 +131,14 @@ header h1 {
 }
 
 /* IMÁGENES DESTACADAS */
+
+.logo {
+    display: block;           /* La convertimos en bloque para que ocupe su propia línea */
+    margin: 0 auto 30px auto; /* Centrado mágico: 'auto' a los lados empuja la imagen al centro */
+    max-width: 550px;         /* Cambia este 250px hasta que el logo tenga el tamaño que buscas */
+    height: auto;             /* Mantiene la proporción original para que no se deforme */
+}
+
 .hero-image {
     display: flex;              /* Flexbox para centrar la imagen */
     justify-content: center;    /* Centrado horizontal */
