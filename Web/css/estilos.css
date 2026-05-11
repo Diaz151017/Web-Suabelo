@@ -228,7 +228,10 @@ h1 {
    BOTONES (CTA - Call To Action)
    ========================================= */
 .boton-cta {
-    display: inline-block;          /* Comportamiento de botón */
+    display: block;             /* Deja de ser texto y se convierte en un bloque estructural */
+    width: fit-content;         /* Evita que el bloque ocupe toda la pantalla de lado a lado */
+    margin: 40px auto;          /* Centrado mágico: empuja igual desde la izquierda y la derecha */
+
     padding: 15px 35px;             /* Tamaño del botón */
     background-color: var(--color-primary); /* Fondo blanco */
     color: var(--color-bg-light);           /* Texto morado */
