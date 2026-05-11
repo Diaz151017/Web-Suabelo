@@ -1,0 +1,281 @@
+/* =========================================
+   ESTILOS GLOBALES
+   ========================================= */
+html { 
+    scroll-behavior: smooth; /* Desplazamiento suave al navegar por anclas */
+    height: 100%;            /* Asegura altura completa de la ventana */
+}
+
+/* VARIABLES CSS (PALETA DE COLORES) */
+:root {
+    --color-primary: #ffffff;   /* Color principal (blanco) */
+    --color-bg-light: #352471;  /* Fondo principal (morado oscuro) */
+    --color-bg-grey: #e6e6e6;   /* Fondo secundario (gris claro) */  
+    --color-text: #ffffff;      /* Color de texto base (blanco) */
+    --font-main: Arial, sans-serif;   /* Fuente principal del sitio */
+}
+
+/* RESET BÁSICO */
+* {
+    box-sizing: border-box;  /* El padding y borde se incluyen en el tamaño total */
+}
+
+/* =========================================
+   ESTILOS DEL BODY (CUERPO)
+   ========================================= */
+body {
+    font-family: var(--font-main);  /* Aplica la fuente definida en variables */
+    background-color: var(--color-bg-light);   /* Color de fondo global */
+    color: var(--color-text);           /* Color de texto global */
+    line-height: 1.6;                 /* Altura de línea para mejor legibilidad */
+    margin: 0;              /* Elimina los márgenes por defecto del navegador */
+    
+    /* Configuración para "Sticky Footer" (Pie de página pegado abajo) */
+    min-height: 100vh;      /* Altura mínima del 100% de la ventana visible */
+    display: flex;          /* Activamos el modelo de caja flexible */          
+    flex-direction: column;   /* Elementos apilados verticalmente (Header, Main, Footer) */ 
+}
+
+/* ESTILOS DEL MAIN (CONTENIDO PRINCIPAL) */
+main {
+    flex: 1; /* Ocupa todo el espacio disponible para empujar el footer abajo */
+}
+
+/* =========================================
+   ESTILOS DEL HEADER (CABECERA)
+   ========================================= */
+header {       
+    margin: 60px auto 20px auto;  /* Margen superior grande, centrado horizontal, inferior pequeño */
+    max-width: 1200px;            /* Ancho máximo del contenido */
+    width: 100%;                  /* Ocupa el ancho disponible */
+    text-align: center;           /* Centra el texto y elementos inline */
+    padding: 0 20px;              /* Espacio interno lateral */
+}
+
+header h1 {
+    font-size: 3.5rem;      /* Tamaño de fuente grande para el título principal */
+    margin-bottom: 20px;    /* Separación inferior */
+    color: var(--color-primary); /* Usa el color blanco definido */
+}
+
+/* MENÚ DE NAVEGACIÓN */
+.menu_navegacion {
+    display: flex;              /* Elementos en fila flexible */
+    justify-content: center;    /* Centrado horizontal de los enlaces */
+    flex-wrap: wrap;            /* Permite saltar de línea en pantallas pequeñas */
+    gap: 10px;                  /* Espacio entre los botones */
+    align-items: center;        /* Alineación vertical al centro */
+    padding: 12px 30px;         /* Relleno interno del menú */
+    border-radius: 50px;        /* Bordes totalmente redondeados */
+    background: white;          /* Fondo blanco para contraste */
+    width: fit-content;         /* El ancho se ajusta al contenido, no ocupa todo */
+    margin: 0 auto;             /* Centrado del bloque en la pantalla */
+}
+
+.menu_navegacion a {
+    display: inline-block;           /* Comportamiento de bloque en línea */
+    text-decoration: none;           /* Elimina el subrayado del enlace */
+    color: var(--color-bg-light);    /* Color de texto morado (invertido) */
+    font-weight: bold;               /* Texto en negrita */
+    padding: 10px 20px;              /* Zona clicleable más amplia */
+    border-radius: 50px;             /* Bordes redondeados en cada botón */
+    transition: all 0.3s ease;       /* Transición suave para efectos hover */
+}
+
+.menu_navegacion a:hover { 
+    background-color: var(--color-bg-light); /* Fondo morado al pasar el ratón */
+    color: var(--color-primary);             /* Texto blanco al pasar el ratón */
+    transform: scale(1.05);                  /* Ligero aumento de tamaño (Zoom) */
+}
+
+.menu_navegacion a.active {
+    background-color: var(--color-bg-light); /* Marca visual para la página actual */
+    color: var(--color-primary);
+}
+
+/* =========================================
+   SECCIONES HERO (INTRODUCCIÓN)
+   ========================================= */
+.hero-intro {
+    max-width: 900px;       /* Limita el ancho del texto para leer mejor */
+    margin: 40px auto;      /* Centrado con margen vertical */
+    text-align: center;     /* Texto centrado */
+    padding: 0 20px;        /* Margen de seguridad lateral */
+}
+
+.hero-intro h2 {
+    font-size: 2.5rem;            /* Tamaño de subtítulo */
+    margin-bottom: 30px;          /* Separación inferior */
+    color: var(--color-primary);  /* Color blanco */
+    border-bottom: 2px solid rgba(255,255,255,0.1); /* Línea decorativa sutil */
+    padding-bottom: 10px;         /* Espacio hasta la línea */
+    display: inline-block;        /* La línea ocupa solo lo que mide el texto */
+}
+
+.hero-intro p {
+    font-size: 1.1rem;      /* Texto ligeramente más grande que el estándar */
+    margin-bottom: 30px;    
+    opacity: 0.9;           /* Ligera transparencia para jerarquía visual */
+    max-width: 800px;       /* Ancho máximo del párrafo */
+    margin-left: auto;      /* Centrado automático izquierda */
+    margin-right: auto;     /* Centrado automático derecha */    
+}
+
+/* IMÁGENES DESTACADAS */
+.hero-image {
+    display: flex;              /* Flexbox para centrar la imagen */
+    justify-content: center;    /* Centrado horizontal */
+    width: 100%;                
+    margin-bottom: 30px;        /* Espacio debajo de la imagen */
+}
+
+.hero-image img {
+    max-width: 100%;        /* La imagen nunca será más ancha que su contenedor (Responsive) */
+    height: auto;           /* Mantiene la proporción de aspecto */
+    border-radius: 15px;    /* Bordes redondeados */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Sombra difusa para dar profundidad */
+}
+
+/* =========================================
+   LISTAS DE MODELOS (TARJETAS DE IA)
+   ========================================= */
+.model-list {
+    list-style: none; /* Elimina los puntos (bullets) de la lista principal */
+    padding: 0;       /* Elimina el padding por defecto */
+    text-align: left; /* Alinea el texto a la izquierda para mejor lectura */
+}
+
+/* Estilo individual de cada tarjeta/item */
+.model-list > li {
+    background: rgba(255, 255, 255, 0.05); /* Fondo blanco semitransparente */
+    border-radius: 15px;                   /* Bordes redondeados */
+    padding: 30px;                         /* Espacio interno */
+    margin-bottom: 40px;                   /* Separación entre tarjetas */
+    border: 1px solid rgba(255,255,255,0.1); /* Borde muy sutil */
+}
+
+.model-list h3 {
+    text-align: center; /* Título de la IA centrado */
+    color: #ffd700;     /* Color dorado para destacar */
+    font-size: 1.8rem;  
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.model-list ol {
+    margin-left: 20px; /* Sangría para la lista numerada interna */
+}
+
+.model-list ol li {
+    margin-bottom: 10px; /* Separación entre características */
+}
+
+/* =========================================
+   LISTAS DE RECURSOS (CAJA BLANCA)
+   ========================================= */
+.link-list, .videos-list {
+    background: white;           /* Fondo blanco sólido */
+    border-radius: 20px;         /* Bordes redondeados */
+    padding: 30px 50px;          /* Espacio interno generoso */
+    width: fit-content;          /* La caja se ajusta al contenido */
+    max-width: 100%;             /* No desborda en móviles */
+    margin: 0 auto 40px auto;    /* Centrado horizontal */
+    text-align: left;            /* Texto alineado a la izquierda */
+    color: var(--color-bg-light); /* Texto morado oscuro (contraste sobre blanco) */
+}
+
+.link-list h3, .videos-list h3 {
+    color: var(--color-bg-light); /* Títulos en morado */
+}
+
+.link-list ol, .videos-list ol {
+    padding-left: 20px; /* Sangría de la lista */
+}
+
+.link-list li, .videos-list li {
+    margin-bottom: 15px; /* Separación entre enlaces */
+    color: var(--color-bg-light);
+}
+
+.link-list a, .videos-list a {
+    color: var(--color-bg-light); /* Enlaces en morado */
+    font-weight: bold;            /* Negrita */
+    text-decoration: underline;   /* Subrayado */
+}
+
+.link-list a:hover, .videos-list a:hover {
+    color: #d900ff; /* Cambio de color al pasar el ratón (Feedback) */
+}
+
+/* =========================================
+   BOTONES (CTA - Call To Action)
+   ========================================= */
+.boton-cta {
+    display: inline-block;          /* Comportamiento de botón */
+    padding: 15px 35px;             /* Tamaño del botón */
+    background-color: var(--color-primary); /* Fondo blanco */
+    color: var(--color-bg-light);           /* Texto morado */
+    text-decoration: none;          /* Sin subrayado */
+    font-weight: bold;              
+    font-size: 1.1rem;
+    border-radius: 50px;            /* Forma de píldora */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación */
+    margin-top: 20px;
+}
+
+.boton-cta:hover {
+    transform: scale(1.05); /* Efecto pop/zoom */
+    box-shadow: 0 0 20px rgba(255,255,255,0.5); /* Resplandor exterior */
+}
+
+/* =========================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================= */
+footer { 
+    background-color: rgba(0,0,0,0.2); /* Fondo ligeramente más oscuro */
+    padding: 3rem 0;                   /* Altura del footer */
+    margin-top: auto;                  /* Empuja hacia abajo si sobra espacio */
+} 
+
+.footer-container { 
+    max-width: 1200px;           /* Ancho máximo contenido */
+    margin: 0 auto;              /* Centrado */
+    display: flex;               /* Flexbox para columnas */
+    justify-content: space-between; /* Distribución espaciada */
+    align-items: center;         /* Alineación vertical */
+    padding: 0 2rem; 
+    flex-wrap: wrap;             /* Adaptable a móviles */
+    gap: 20px;
+} 
+
+/* Enlaces del Footer */
+.footer-links ul {
+    list-style: none;   /* Sin puntos */
+    padding: 0;
+    margin: 0;
+    display: flex;      /* Enlaces en horizontal */
+    gap: 20px;          /* Separación */
+}
+
+.footer-links a, .footer-social a {
+    color: var(--color-primary); /* Texto blanco */
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.8;               /* Un poco transparente por defecto */
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    opacity: 1;                 /* Totalmente visible al pasar ratón */
+    text-decoration: underline;
+}
+
+/* Redes Sociales */
+.footer-social {
+    display: flex;
+    gap: 15px; /* Separación entre iconos */
+}
+
+.footer-social i {
+    font-size: 1.2rem; /* Tamaño de iconos */
+}
