@@ -241,11 +241,15 @@ h1 {
     border-radius: 50px;            /* Forma de píldora */
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación */
     margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Sombra difusa para dar profundidad */
 }
 
 .boton-cta:hover {
+    background-color: var(--color-bg-light); /* Fondo morado al pasar el ratón */
+    color: var(--color-primary);             /* Texto blanco al pasar el ratón */
     transform: scale(1.05); /* Efecto pop/zoom */
     box-shadow: 0 0 20px rgba(255,255,255,0.5); /* Resplandor exterior */
+    
 }
 
 /* EL CONTENEDOR PRINCIPAL (La estantería) */
