@@ -2,80 +2,118 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Adrián Díaz García">
-        <title>Tienda</title>
+        <meta name="description" content="Catálogo de piezas únicas de Suabelo. Joyería botánica y resina.">
+        <meta name="author" content="[T] Adrián Díaz García">
+        <title>Tienda - Suabelo Resina Botánica</title>
+
         <link rel="stylesheet" href="css/estilos.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
     <body>
         <header>
             <img src="img/Suabelo_LOGO.png" alt="Logo_de_Suabelo" class="logo">
-        </header>
+        </header>   
+
         <nav class="menu_navegacion">
-                <a href="index.html">Inicio</a>
-                <a href="procesocreativo.html">Proceso de creación</a>
-                <a href="tienda.html" class="active">Tienda</a>
-                <a href="sobrenosotros.html">Sobre Nosotros</a>
-                <a href="recursos.html">Recursos</a>
-            </nav>
+            <a href="index.html">Inicio</a>
+            <a href="procesocreativo.html">Proceso de creación</a>
+            <a href="tienda.html" class="active">Tienda</a>
+            <a href="sobrenosotros.html">Sobre nosotros</a>
+            <a href="recursos.html">Recursos</a>
+            <a href="carrito.html" class="enlace-carrito" aria-label="Ver carrito de la compra">
+            <i class="fas fa-shopping-cart"></i>
+                <span class="badge-carrito"></span> </a>
+        </nav>
+
         <main>
-            <section class="hero-intro">
-                <h1>Tienda</h1>
-                <div class="hero-image">
-                    <img src="img/ia-diseñador.jpeg" alt="Robot IA diseñando">
-                </div>
-                <p>
-                    Las IAs generativas multimedia han roto la barrera entre la imaginación y la realidad. Desde convertir texto en cine hasta componer partituras orquestales, estas herramientas son el nuevo pincel digital.
-                </p>
-                <br>
-                <h2>Modelos destacados</h2>
-                
-                <ul class="model-list">
-                    <li>
-                        <h3>Midjourney V6</h3>
-                        <p>Lanzada en octubre de 2025, sigue siendo la reina indiscutible de la calidad artística estática.</p>
-                        <ol>
-                            <li><strong>Arquitectura:</strong> Red neuronal profunda optimizada para texturas y luz.</li>
-                            <li><strong>Calidad superior:</strong> Detalles fotorrealistas y coherencia visual mejorada.</li>
-                            <li><strong>Estilo y personalización:</strong> Control preciso sobre estilos artísticos y parámetros de cámara.</li>
-                            <li><strong>Velocidad:</strong> Tiempos de renderizado reducidos drásticamente.</li>
-                            <li><strong>Integración:</strong> Nueva API para herramientas de diseño.</li>
-                        </ol>
-                    </li>
-
-                    <li>
-                        <h3>Runway Gen-2</h3>
-                        <p>La revolución del video generativo, permitiendo crear escenas complejas desde cero.</p>
-                        <ol>
-                            <li><strong>Text-to-Video:</strong> Crea clips de cine solo con palabras.</li>
-                            <li><strong>Image-to-Video:</strong> Da vida y movimiento a cualquier fotografía estática.</li>
-                            <li><strong>Calidad 4K:</strong> Resultados profesionales aptos para producción.</li>
-                            <li><strong>Interfaz intuitiva:</strong> Herramientas de "pincel de movimiento" para directores.</li>
-                            <li><strong>Versatilidad:</strong> Ideal para storyboards, publicidad y cine experimental.</li>
-                        </ol>
-                    </li>
-
-                    <li>
-                        <h3>AIVA</h3>
-                        <p>El compositor virtual que está redefiniendo la música para medios y videojuegos.</p>
-                        <ol>
-                            <li><strong>Composición automática:</strong> Genera pistas completas basadas en emociones.</li>
-                            <li><strong>Estilos variados:</strong> Desde épica orquestal hasta Lo-Fi y Jazz.</li>
-                            <li><strong>Colaboración:</strong> Exporta en MIDI para que músicos humanos refinen la obra.</li>
-                            <li><strong>Licencias:</strong> Creación libre de derechos para creadores de contenido.</li>
-                            <li><strong>Interfaz amigable:</strong> No requiere saber solfeo para componer.</li>
-                        </ol>
-                    </li>
-                </ul>
+            <section class="tienda-header">
+                <h1>Catálogo Suabelo</h1>
+                <p class="tienda-descripcion">Explora nuestras piezas eternizadas. Cada flor y cada hoja es única; no hay dos joyas iguales en este universo.</p>
             </section>
+
+            <div class="contenedor-tienda">
+    
+                <aside class="filtros-tienda">
+                    <h3>Categorías</h3>
+                    <ul>
+                        <li><a href="#" class="filtro-activo">Todo</a></li>
+                        <li><a href="#">Colgantes</a></li>
+                        <li><a href="#">Anillos</a></li>
+                        <li><a href="#">Pendientes</a></li>
+                        <li><a href="#">Pulseras</a></li>
+                    </ul>
+                </aside>
+
+                <div class="area-productos">
+        
+                    <div class="controles-tienda">
+                        <p class="contador-resultados">Mostrando 6 piezas únicas</p>
+                        <div class="selector-orden">
+                            <label for="ordenar">Ordenar por:</label>
+                            <select id="ordenar" name="ordenar">
+                                <option value="novedades">Novedades</option>
+                                <option value="precio-asc">Precio: de menor a mayor</option>
+                                <option value="precio-desc">Precio: de mayor a menor</option>
+                            </select>
+                        </div>
+                    </div>
+                    <section class="tienda-galeria">
+                    
+                        <div class="producto-card">
+                            <img src="img/colgante-rosa.webp" alt="Colgante de resina con azalea rosa">
+                            <h3>Colgante Alba</h3>
+                            <p class="precio">35,00 €</p>
+                            <button class="boton-cta"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                        </div>
+
+                        <div class="producto-card">
+                            <img src="img/pendientes-helecho.jpg" alt="Pendientes con mini helecho">
+                            <h3>Pendientes Bosque</h3>
+                            <p class="precio">28,00 €</p>
+                            <button class="boton-cta"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                        </div>
+
+                        <div class="producto-card">
+                            <img src="img/anillo-margarita.webp" alt="Anillo con margarita encapsulada">
+                            <h3>Anillo Sol</h3>
+                            <p class="precio">22,00 €</p>
+                            <button class="boton-cta"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                        </div>
+
+                        <div class="producto-card">
+                            <img src="img/pulsera-lavanda.jpg" alt="Pulsera rígida con lavanda">
+                            <h3>Pulsera Provenza</h3>
+                            <p class="precio">42,00 €</p>
+                            <button class="boton-cta"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                        </div>
+
+                        <div class="producto-card">
+                            <img src="img/colgante-nomeolvides.jpg" alt="Colgante con flor nomeolvides">
+                            <h3>Colgante Memoria</h3>
+                            <p class="precio">38,00 €</p>
+                            <button class="boton-cta"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                        </div>
+
+                        <div class="producto-card">
+                            <img src="img/pendientes-azalea.jpg" alt="Pendientes con azalea">
+                            <h3>Pendientes Azalea</h3>
+                            <p class="precio">28,00 €</p>
+                            <button class="boton-cta"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
         </main>
+        
         <footer>
             <div class="footer-container">
                 <div class="footer-logo">
-                    <p>&copy; 2025 Desarrollado por <strong>Adrián Díaz García</strong>.</p>
+                    <p>
+                        &copy; 2026 Desarrollado por <strong>Adrián Díaz García</strong>.
+                    </p>
                 </div>
+                
                 <div class="footer-links">
                     <ul>
                         <li><a href="#">Aviso Legal</a></li>
@@ -83,6 +121,7 @@
                         <li><a href="#">Términos</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-social">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>

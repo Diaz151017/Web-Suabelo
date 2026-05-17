@@ -147,6 +147,22 @@ h1 {
     display: inline-block;        /* La línea ocupa solo lo que mide el texto */
 }
 
+.tienda-header {
+    max-width: 900px;       /* Limita el ancho del texto para leer mejor */
+    margin: 40px auto;      /* Centrado con margen vertical */
+    text-align: center;     /* Texto centrado */
+    padding: 0 20px;        /* Margen de seguridad lateral */
+}
+
+.tienda-header h2 {
+    font-size: 1.8rem;            /* Tamaño de subtítulo */
+    margin-bottom: 30px;          /* Separación inferior */
+    color: var(--color-text-dark);  /* Color oscuro para mejor contraste */
+    border-bottom: 2px solid rgba(58, 46, 49, 0.1); /* Línea decorativa sutil */
+    padding-bottom: 10px;         /* Espacio hasta la línea */
+    display: inline-block;        /* La línea ocupa solo lo que mide el texto */
+}
+
 /* IMÁGENES DESTACADAS */
 
 .logo {
@@ -282,20 +298,27 @@ h1 {
 }
 
 /* LAS TARJETAS (Las vitrinas individuales) */
+/* DOMANDO A LAS IMÁGENES REBELDES */
+.producto-card img {
+    width: 100%;
+    height: 250px; /* Forzamos una altura fija para todas */
+    object-fit: cover; /* Hace que la imagen llene el espacio sin deformarse, recortando lo sobrante */
+    border-radius: 10px;
+}
+
+/* ALINEACIÓN PERFECTA DEL CONTENIDO */
 .producto-card {
     background: white;
     border-radius: 15px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Una sombra muy suave y elegante */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
-}
-
-/* Para que la imagen del producto no se salga de su tarjeta */
-.producto-card img {
-    max-width: 100%;
-    border-radius: 10px;
-    height: auto;
+    /* Añadimos Flexbox a la tarjeta para empujar el botón siempre al fondo */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; 
 }
 
 /* Un pequeño efecto al pasar el ratón */
@@ -353,4 +376,182 @@ footer {
 
 .footer-social i {
     font-size: 1.2rem; /* Tamaño de iconos */
+}
+
+/* =========================================
+   ESTRUCTURA DE LA TIENDA (LAYOUT)
+   ========================================= */
+.contenedor-tienda {
+    display: flex;
+    gap: 30px;
+    max-width: 95%; /* Para que no se estire demasiado en pantallas gigantes */
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: flex-start; /* Evita que la barra lateral se estire verticalmente */
+}
+
+/* =========================================
+   BARRA LATERAL DE FILTROS
+   ========================================= */
+.filtros-tienda {
+    flex: 0 0 250px; /* Ancho fijo para la barra lateral */
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.filtros-tienda h3 {
+    margin-top: 0;
+    color: var(--color-bg-light);
+    border-bottom: 2px solid var(--color-brand-muted);
+    padding-bottom: 10px;
+}
+
+.filtros-tienda ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filtros-tienda li {
+    margin-bottom: 10px;
+}
+
+.filtros-tienda a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    display: block;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.filtros-tienda a:hover, .filtros-tienda a.filtro-activo {
+    background-color: var(--color-brand-muted);
+    color: var(--color-text-dark);
+    font-weight: bold;
+}
+
+/* =========================================
+   AJUSTES PARA LA GALERÍA DENTRO DE LA TIENDA
+   ========================================= */
+/* Sobrescribimos ligeramente tu .tienda-galeria para que encaje junto a los filtros */
+.contenedor-tienda .tienda-galeria {
+    max-width: none; /* Quitamos el límite de ancho para que se adapte al espacio disponible */
+    padding: 0; /* Quitamos el padding extra porque el contenedor ya lo tiene */
+    margin: 0; 
+}
+
+/* Estilo para el precio */
+.precio {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--color-accent); /* Usamos el verde salvia apagado */
+    margin: 10px 0;
+}
+
+/* Ajuste del botón CTA dentro de la tarjeta de producto */
+.producto-card .boton-cta {
+    margin: 10px auto 0 auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    width: 100%; /* El botón ocupa el ancho de la tarjeta */
+}
+
+/* Cabecera de la tienda más compacta */
+.tienda-header {
+    max-width: 800px;       
+    margin: 10px auto 30px auto; /* Reducimos el margen superior e inferior drásticamente */
+    text-align: center;     
+    padding: 0 20px;        
+}
+
+.tienda-header h1 {
+    font-size: 2.2rem; /* Ligeramente más pequeño que el H1 del inicio */
+    margin-bottom: 10px; /* Acercamos el título al texto descriptivo */
+}
+
+/* Nueva clase para el texto descriptivo */
+.tienda-descripcion {
+    font-size: 1.1rem;
+    color: var(--color-text-dark);  
+    border-bottom: 1px solid rgba(58, 46, 49, 0.1); /* Línea más fina */
+    padding-bottom: 15px;         
+    display: inline-block;        
+    opacity: 0.8; /* Le quitamos un poco de peso visual frente a los productos */
+}
+
+/* =========================================
+   CARRITO DE COMPRA (NAV)
+   ========================================= */
+.menu_navegacion .enlace-carrito {
+    position: relative; /* Clave para que la burbuja de cantidad se posicione respecto al botón */
+    padding: 10px 15px; 
+}
+
+.badge-carrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--color-accent); /* Tu verde botánico */
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 2px 7px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    /* Desactiva clics en la burbuja para que no interfiera con el botón */
+    pointer-events: none; 
+}
+
+/* =========================================
+   ÁREA DE PRODUCTOS Y BARRA DE ORDENACIÓN
+   ========================================= */
+/* Este contenedor sustituye a la galería a la hora de pelear por el espacio con los filtros */
+.area-productos {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    max-width: none;
+}
+
+.controles-tienda {
+    display: flex;
+    justify-content: space-between; /* Texto a la izquierda, selector a la derecha */
+    align-items: center;
+    background: white;
+    padding: 15px 25px;
+    border-radius: 15px;
+    margin-bottom: 30px; /* Espacio antes de que empiecen las tarjetas */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.contador-resultados {
+    margin: 0;
+    color: var(--color-text-dark);
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.selector-orden label {
+    margin-right: 10px;
+    color: var(--color-text-dark);
+    font-weight: bold;
+}
+
+.selector-orden select {
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--color-brand-muted);
+    color: var(--color-text-dark);
+    font-family: inherit; /* Usa la fuente Assistant automáticamente */
+    background-color: var(--color-bg-main);
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.selector-orden select:focus {
+    border-color: var(--color-accent);
 }
