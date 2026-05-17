@@ -1,26 +1,30 @@
 /* =========================================
-   ESTILOS GLOBALES
+   ESTILOS GLOBALES VARIABLES CSS (PALETA DE COLORES)
    ========================================= */
-html { 
-    scroll-behavior: smooth; /* Desplazamiento suave al navegar por anclas */
-    height: 100%;            /* Asegura altura completa de la ventana */
-}
-
-/* VARIABLES CSS (PALETA DE COLORES) */
 :root {
     --color-primary: #ffffff;         /* Blanco puro para contrastes fuertes */
     --color-bg-light: #C25875;        /* El rosa original y elegante de tu logo (Cabecera) */
     
-    /* LOS NUEVOS TONOS BOTÁNICOS */
+    /* LOS TONOS BOTÁNICOS */
     --color-bg-main: #FAFAF8;         /* Blanco roto cálido (color lino o crema muy suave) para el fondo */
     --color-brand-muted: #EADCE0;     /* Un rosa polvo casi gris, para detalles secundarios */
     --color-text-dark: #3A2E31;       /* Gris carbón con un subtono ciruela, mucho más elegante que el negro puro */
     --color-accent: #8A9A86;          /* Un verde salvia apagado. La botánica necesita hojas, no solo flores. */
 }
 
-/* RESET BÁSICO */
+/* =========================================
+   RESET BÁSICO 
+ ========================================= */
 * {
     box-sizing: border-box;  /* El padding y borde se incluyen en el tamaño total */
+}
+
+/* =========================================
+   ARQUITECTURA DEL HTML
+   ========================================= */
+html { 
+    scroll-behavior: smooth; /* Desplazamiento suave al navegar por anclas */
+    height: 100%;            /* Asegura altura completa de la ventana */
 }
 
 /* =========================================
@@ -40,7 +44,18 @@ body {
     overflow-x: hidden; /* Corta por lo sano cualquier elemento que intente salirse por los lados */
 }
 
-/* ESTILOS DEL MAIN (CONTENIDO PRINCIPAL) */
+/* =========================================
+   ESTILOS DE TIPOGRAFÍA Y ETIQUETAS BASE
+   ========================================= */
+h1 {
+    font-size: 3.5rem;      /* Tamaño de fuente grande para el título principal */
+    margin-bottom: 20px;    /* Separación inferior */
+    color: var(--color-text-dark); /* Usa el color blanco definido */
+}
+
+/* =========================================
+   ESTILOS DEL MAIN (CONTENIDO PRINCIPAL) 
+   ========================================= */
 main {
     flex: 1;
     background-color: #EFEBE9; /* Pon aquí el HEX del color que prefieras */
@@ -48,6 +63,58 @@ main {
     padding-top: 40px; /* Le damos aire al h1 por arriba */
     padding-bottom: 40px;
     color: var(--color-text-dark); /* Color de texto más oscuro para mejor contraste sobre el fondo claro */
+}
+
+/* =========================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================= */
+footer { 
+    background-color: rgba(0,0,0,0.2); /* Fondo ligeramente más oscuro */
+    padding: 3rem 0;                   /* Altura del footer */
+    margin-top: auto;                  /* Empuja hacia abajo si sobra espacio */
+} 
+
+.footer-container { 
+    max-width: 1200px;           /* Ancho máximo contenido */
+    margin: 0 auto;              /* Centrado */
+    display: flex;               /* Flexbox para columnas */
+    justify-content: space-between; /* Distribución espaciada */
+    align-items: center;         /* Alineación vertical */
+    padding: 0 2rem; 
+    flex-wrap: wrap;             /* Adaptable a móviles */
+    gap: 20px;
+} 
+
+/* Enlaces del Footer */
+.footer-links ul {
+    list-style: none;   /* Sin puntos */
+    padding: 0;
+    margin: 0;
+    display: flex;      /* Enlaces en horizontal */
+    gap: 20px;          /* Separación */
+}
+
+.footer-links a, .footer-social a {
+    color: var(--color-primary); /* Texto blanco */
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.8;               /* Un poco transparente por defecto */
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    opacity: 1;                 /* Totalmente visible al pasar ratón */
+    text-decoration: underline;
+}
+
+/* Redes Sociales */
+.footer-social {
+    display: flex;
+    gap: 15px; /* Separación entre iconos */
+}
+
+.footer-social i {
+    font-size: 1.2rem; /* Tamaño de iconos */
 }
 
 /* =========================================
@@ -61,133 +128,8 @@ header {
     padding: 0 20px;              /* Espacio interno lateral */
 }
 
-h1 {
-    font-size: 3.5rem;      /* Tamaño de fuente grande para el título principal */
-    margin-bottom: 20px;    /* Separación inferior */
-    color: var(--color-text-dark); /* Usa el color blanco definido */
-}
-
-/* MENÚ DE NAVEGACIÓN */
-.menu_navegacion {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-    padding: 15px 0; 
-    background: white;
-    border-radius: 0;       
-    margin-top: 30px;       
-    margin-bottom: 0;    
-}
-
-.menu_navegacion a {
-    display: inline-block;           /* Comportamiento de bloque en línea */
-    text-decoration: none;           /* Elimina el subrayado del enlace */
-    color: var(--color-bg-light);    /* Color de texto morado (invertido) */
-    font-weight: bold;               /* Texto en negrita */
-    padding: 10px 20px;              /* Zona clicleable más amplia */
-    border-radius: 50px;             /* Bordes redondeados en cada botón */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Sombra difusa para dar profundidad */
-}
-
-.menu_navegacion a:hover { 
-    background-color: var(--color-bg-light); /* Fondo morado al pasar el ratón */
-    color: var(--color-primary);             /* Texto blanco al pasar el ratón */
-    transform: scale(1.05);                  /* Ligero aumento de tamaño (Zoom) */
-}
-
-.menu_navegacion a.active {
-    background-color: var(--color-bg-light); /* Marca visual para la página actual */
-    color: var(--color-primary);
-}
-
 /* =========================================
-   SECCIONES HERO (INTRODUCCIÓN)
-   ========================================= */
-.hero-intro {
-    max-width: 900px;       /* Limita el ancho del texto para leer mejor */
-    margin: 40px auto;      /* Centrado con margen vertical */
-    text-align: center;     /* Texto centrado */
-    padding: 0 20px;        /* Margen de seguridad lateral */
-}
-
-.hero-intro h2 {
-    font-size: 2.5rem;            /* Tamaño de subtítulo */
-    margin-bottom: 30px;          /* Separación inferior */
-    color: var(--color-text-dark);  /* Color oscuro para mejor contraste */
-    border-bottom: 2px solid rgba(58, 46, 49, 0.1); /* Línea decorativa sutil */
-    padding-bottom: 10px;         /* Espacio hasta la línea */
-    display: inline-block;        /* La línea ocupa solo lo que mide el texto */
-}
-
-.hero-intro p {
-    font-size: 1.1rem;      /* Texto ligeramente más grande que el estándar */
-    margin-bottom: 30px;    
-    opacity: 0.9;           /* Ligera transparencia para jerarquía visual */
-    max-width: 800px;       /* Ancho máximo del párrafo */
-    margin-left: auto;      /* Centrado automático izquierda */
-    margin-right: auto;     /* Centrado automático derecha */    
-}
-
-.hero-tienda {
-    max-width: 900px;       /* Limita el ancho del texto para leer mejor */
-    margin: 40px auto;      /* Centrado con margen vertical */
-    text-align: center;     /* Texto centrado */
-    padding: 0 20px;        /* Margen de seguridad lateral */
-}
-
-.hero-tienda h2 {
-    font-size: 2.5rem;            /* Tamaño de subtítulo */
-    margin-bottom: 30px;          /* Separación inferior */
-    color: var(--color-text-dark);  /* Color oscuro para mejor contraste */
-    border-bottom: 2px solid rgba(58, 46, 49, 0.1); /* Línea decorativa sutil */
-    padding-bottom: 10px;         /* Espacio hasta la línea */
-    display: inline-block;        /* La línea ocupa solo lo que mide el texto */
-}
-
-.tienda-header {
-    max-width: 900px;       /* Limita el ancho del texto para leer mejor */
-    margin: 40px auto;      /* Centrado con margen vertical */
-    text-align: center;     /* Texto centrado */
-    padding: 0 20px;        /* Margen de seguridad lateral */
-}
-
-.tienda-header h2 {
-    font-size: 1.8rem;            /* Tamaño de subtítulo */
-    margin-bottom: 30px;          /* Separación inferior */
-    color: var(--color-text-dark);  /* Color oscuro para mejor contraste */
-    border-bottom: 2px solid rgba(58, 46, 49, 0.1); /* Línea decorativa sutil */
-    padding-bottom: 10px;         /* Espacio hasta la línea */
-    display: inline-block;        /* La línea ocupa solo lo que mide el texto */
-}
-
-/* IMÁGENES DESTACADAS */
-
-.logo {
-    display: block;           /* La convertimos en bloque para que ocupe su propia línea */
-    margin: 0 auto 30px auto; /* Centrado mágico: 'auto' a los lados empuja la imagen al centro */
-    max-width: 550px;         /* Cambia este 250px hasta que el logo tenga el tamaño que buscas */
-    height: auto;             /* Mantiene la proporción original para que no se deforme */
-}
-
-.hero-image {
-    display: flex;              /* Flexbox para centrar la imagen */
-    justify-content: center;    /* Centrado horizontal */
-    width: 100%;                
-    margin-bottom: 30px;        /* Espacio debajo de la imagen */
-}
-
-.hero-image img {
-    max-width: 100%;        /* La imagen nunca será más ancha que su contenedor (Responsive) */
-    height: auto;           /* Mantiene la proporción de aspecto */
-    border-radius: 15px;    /* Bordes redondeados */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Sombra difusa para dar profundidad */
-}
-
-/* =========================================
-   LISTAS DE MODELOS (TARJETAS DE IA)
+   COMPONENTES REUTILIZABLES (BLOQUES LEGO)
    ========================================= */
 .model-list {
     list-style: none; /* Elimina los puntos (bullets) de la lista principal */
@@ -285,10 +227,11 @@ h1 {
     
 }
 
-/* EL CONTENEDOR PRINCIPAL (La estantería) */
+/* =========================================
+   EL CONTENEDOR PRINCIPAL (La estantería) 
+   ========================================= */
 .tienda-galeria {
     display: grid;
-    /* ESTA ES LA LÍNEA MÁGICA: */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 30px; /* El espacio exacto entre cada tarjeta de producto */
     
@@ -297,8 +240,9 @@ h1 {
     margin: 0 auto;    /* Lo centramos */
 }
 
-/* LAS TARJETAS (Las vitrinas individuales) */
-/* DOMANDO A LAS IMÁGENES REBELDES */
+/* =========================================
+   LAS TARJETAS (viewitrinas individuales)
+   ========================================= */
 .producto-card img {
     width: 100%;
     height: 250px; /* Forzamos una altura fija para todas */
@@ -306,7 +250,9 @@ h1 {
     border-radius: 10px;
 }
 
-/* ALINEACIÓN PERFECTA DEL CONTENIDO */
+/* =========================================
+   ALINEACIÓN PERFECTA DEL CONTENIDO 
+   =========================================*/
 .producto-card {
     background: white;
     border-radius: 15px;
@@ -321,61 +267,139 @@ h1 {
     height: 100%; 
 }
 
-/* Un pequeño efecto al pasar el ratón */
 .producto-card:hover {
     transform: translateY(-10px); /* La tarjeta "levita" un poco hacia arriba */
 }
 
 /* =========================================
-   PIE DE PÁGINA (FOOTER)
+   SECCIONES ESPECÍFICAS (HERO, MODELOS, RECURSOS, TIENDA)
+     Y ELEMENTOS DE NAVEGACIÓN
    ========================================= */
-footer { 
-    background-color: rgba(0,0,0,0.2); /* Fondo ligeramente más oscuro */
-    padding: 3rem 0;                   /* Altura del footer */
-    margin-top: auto;                  /* Empuja hacia abajo si sobra espacio */
-} 
-
-.footer-container { 
-    max-width: 1200px;           /* Ancho máximo contenido */
-    margin: 0 auto;              /* Centrado */
-    display: flex;               /* Flexbox para columnas */
-    justify-content: space-between; /* Distribución espaciada */
-    align-items: center;         /* Alineación vertical */
-    padding: 0 2rem; 
-    flex-wrap: wrap;             /* Adaptable a móviles */
-    gap: 20px;
-} 
-
-/* Enlaces del Footer */
-.footer-links ul {
-    list-style: none;   /* Sin puntos */
-    padding: 0;
-    margin: 0;
-    display: flex;      /* Enlaces en horizontal */
-    gap: 20px;          /* Separación */
-}
-
-.footer-links a, .footer-social a {
-    color: var(--color-primary); /* Texto blanco */
-    text-decoration: none;
-    font-size: 0.9rem;
-    opacity: 0.8;               /* Un poco transparente por defecto */
-    transition: opacity 0.3s;
-}
-
-.footer-links a:hover, .footer-social a:hover {
-    opacity: 1;                 /* Totalmente visible al pasar ratón */
-    text-decoration: underline;
-}
-
-/* Redes Sociales */
-.footer-social {
+.menu_navegacion {
     display: flex;
-    gap: 15px; /* Separación entre iconos */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    padding: 15px 0; 
+    background: white;
+    border-radius: 0;       
+    margin-top: 30px;       
+    margin-bottom: 0;    
 }
 
-.footer-social i {
-    font-size: 1.2rem; /* Tamaño de iconos */
+.menu_navegacion a {
+    display: inline-block;           /* Comportamiento de bloque en línea */
+    text-decoration: none;           /* Elimina el subrayado del enlace */
+    color: var(--color-bg-light);    /* Color de texto morado (invertido) */
+    font-weight: bold;               /* Texto en negrita */
+    padding: 10px 20px;              /* Zona clicleable más amplia */
+    border-radius: 50px;             /* Bordes redondeados en cada botón */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Sombra difusa para dar profundidad */
+}
+
+.menu_navegacion a:hover { 
+    background-color: var(--color-bg-light); /* Fondo morado al pasar el ratón */
+    color: var(--color-primary);             /* Texto blanco al pasar el ratón */
+    transform: scale(1.05);                  /* Ligero aumento de tamaño (Zoom) */
+}
+
+.menu_navegacion a.active {
+    background-color: var(--color-bg-light); /* Marca visual para la página actual */
+    color: var(--color-primary);
+}
+
+/* =========================================
+   CARRITO DE COMPRA (NAV)
+   ========================================= */
+.menu_navegacion .enlace-carrito {
+    position: relative; /* Clave para que la burbuja de cantidad se posicione respecto al botón */
+    padding: 10px 15px; 
+}
+
+.badge-carrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--color-accent); /* Tu verde botánico */
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 2px 7px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    /* Desactiva clics en la burbuja para que no interfiera con el botón */
+    pointer-events: none; 
+}
+
+/* =========================================
+   SECCIONES HERO (INTRODUCCIÓN)
+   ========================================= */
+.hero-intro {
+    max-width: 900px;       /* Limita el ancho del texto para leer mejor */
+    margin: 40px auto;      /* Centrado con margen vertical */
+    text-align: center;     /* Texto centrado */
+    padding: 0 20px;        /* Margen de seguridad lateral */
+}
+
+.hero-intro h2 {
+    font-size: 2.5rem;            /* Tamaño de subtítulo */
+    margin-bottom: 30px;          /* Separación inferior */
+    color: var(--color-text-dark);  /* Color oscuro para mejor contraste */
+    border-bottom: 2px solid rgba(58, 46, 49, 0.1); /* Línea decorativa sutil */
+    padding-bottom: 10px;         /* Espacio hasta la línea */
+    display: inline-block;        /* La línea ocupa solo lo que mide el texto */
+}
+
+.hero-intro p {
+    font-size: 1.1rem;      /* Texto ligeramente más grande que el estándar */
+    margin-bottom: 30px;    
+    opacity: 0.9;           /* Ligera transparencia para jerarquía visual */
+    max-width: 800px;       /* Ancho máximo del párrafo */
+    margin-left: auto;      /* Centrado automático izquierda */
+    margin-right: auto;     /* Centrado automático derecha */    
+}
+
+.hero-tienda {
+    max-width: 900px;       /* Limita el ancho del texto para leer mejor */
+    margin: 40px auto;      /* Centrado con margen vertical */
+    text-align: center;     /* Texto centrado */
+    padding: 0 20px;        /* Margen de seguridad lateral */
+}
+
+.hero-tienda h2 {
+    font-size: 2.5rem;            /* Tamaño de subtítulo */
+    margin-bottom: 30px;          /* Separación inferior */
+    color: var(--color-text-dark);  /* Color oscuro para mejor contraste */
+    border-bottom: 2px solid rgba(58, 46, 49, 0.1); /* Línea decorativa sutil */
+    padding-bottom: 10px;         /* Espacio hasta la línea */
+    display: inline-block;        /* La línea ocupa solo lo que mide el texto */
+}
+
+/* =========================================
+   IMÁGENES DESTACADAS 
+   ========================================= */
+
+.logo {
+    display: block;           /* La convertimos en bloque para que ocupe su propia línea */
+    margin: 0 auto 30px auto; /* Centrado mágico: 'auto' a los lados empuja la imagen al centro */
+    max-width: 550px;         /* Cambia este 250px hasta que el logo tenga el tamaño que buscas */
+    height: auto;             /* Mantiene la proporción original para que no se deforme */
+}
+
+.hero-image {
+    display: flex;              /* Flexbox para centrar la imagen */
+    justify-content: center;    /* Centrado horizontal */
+    width: 100%;                
+    margin-bottom: 30px;        /* Espacio debajo de la imagen */
+}
+
+.hero-image img {
+    max-width: 100%;        /* La imagen nunca será más ancha que su contenedor (Responsive) */
+    height: auto;           /* Mantiene la proporción de aspecto */
+    border-radius: 15px;    /* Bordes redondeados */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Sombra difusa para dar profundidad */
 }
 
 /* =========================================
@@ -443,7 +467,6 @@ footer {
     margin: 0; 
 }
 
-/* Estilo para el precio */
 .precio {
     font-size: 1.3rem;
     font-weight: bold;
@@ -451,7 +474,6 @@ footer {
     margin: 10px 0;
 }
 
-/* Ajuste del botón CTA dentro de la tarjeta de producto */
 .producto-card .boton-cta {
     margin: 10px auto 0 auto;
     padding: 10px 20px;
@@ -459,7 +481,6 @@ footer {
     width: 100%; /* El botón ocupa el ancho de la tarjeta */
 }
 
-/* Cabecera de la tienda más compacta */
 .tienda-header {
     max-width: 800px;       
     margin: 10px auto 30px auto; /* Reducimos el margen superior e inferior drásticamente */
@@ -472,7 +493,15 @@ footer {
     margin-bottom: 10px; /* Acercamos el título al texto descriptivo */
 }
 
-/* Nueva clase para el texto descriptivo */
+.tienda-header h2 {
+    font-size: 1.8rem;            /* Tamaño de subtítulo */
+    margin-bottom: 30px;          /* Separación inferior */
+    color: var(--color-text-dark);  /* Color oscuro para mejor contraste */
+    border-bottom: 2px solid rgba(58, 46, 49, 0.1); /* Línea decorativa sutil */
+    padding-bottom: 10px;         /* Espacio hasta la línea */
+    display: inline-block;        /* La línea ocupa solo lo que mide el texto */
+}
+
 .tienda-descripcion {
     font-size: 1.1rem;
     color: var(--color-text-dark);  
@@ -480,29 +509,6 @@ footer {
     padding-bottom: 15px;         
     display: inline-block;        
     opacity: 0.8; /* Le quitamos un poco de peso visual frente a los productos */
-}
-
-/* =========================================
-   CARRITO DE COMPRA (NAV)
-   ========================================= */
-.menu_navegacion .enlace-carrito {
-    position: relative; /* Clave para que la burbuja de cantidad se posicione respecto al botón */
-    padding: 10px 15px; 
-}
-
-.badge-carrito {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: var(--color-accent); /* Tu verde botánico */
-    color: white;
-    font-size: 0.8rem;
-    font-weight: bold;
-    padding: 2px 7px;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    /* Desactiva clics en la burbuja para que no interfiera con el botón */
-    pointer-events: none; 
 }
 
 /* =========================================
@@ -554,4 +560,43 @@ footer {
 
 .selector-orden select:focus {
     border-color: var(--color-accent);
+}
+
+/* =========================================
+   MEDIA QUERIES (MÓVILES Y TABLETS)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Apilamos el contenedor principal */
+    .contenedor-tienda {
+        flex-direction: column; /* Cambia la dirección de horizontal a vertical */
+    }
+
+    /* 2. La barra de filtros pasa a ocupar todo el ancho arriba */
+    .filtros-tienda {
+        flex: none; /* Le quitamos el ancho fijo de 250px */
+        width: 100%; 
+        margin-bottom: 10px; /* Separación con los productos */
+    }
+
+    /* 3. La barra de ordenar se vuelve vertical para que no se salga de la pantalla */
+    .controles-tienda {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* 4. Ajustes generales de texto para que no desborde en pantallas pequeñas */
+    h1 {
+        font-size: 2.5rem; 
+    }
+    
+    .tienda-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .menu_navegacion {
+        flex-direction: column; /* Apila los enlaces del menú en móviles */
+        width: 100%;
+    }
 }
