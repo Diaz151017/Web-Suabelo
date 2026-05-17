@@ -77,7 +77,7 @@ h1 {
     padding: 15px 0; 
     background: white;
     border-radius: 0;       
-    margin-top: 20px;       
+    margin-top: 30px;       
     margin-bottom: 0;    
 }
 
@@ -88,7 +88,8 @@ h1 {
     font-weight: bold;               /* Texto en negrita */
     padding: 10px 20px;              /* Zona clicleable más amplia */
     border-radius: 50px;             /* Bordes redondeados en cada botón */
-    transition: all 0.3s ease;       /* Transición suave para efectos hover */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Sombra difusa para dar profundidad */
 }
 
 .menu_navegacion a:hover { 
@@ -128,6 +129,22 @@ h1 {
     max-width: 800px;       /* Ancho máximo del párrafo */
     margin-left: auto;      /* Centrado automático izquierda */
     margin-right: auto;     /* Centrado automático derecha */    
+}
+
+.hero-tienda {
+    max-width: 900px;       /* Limita el ancho del texto para leer mejor */
+    margin: 40px auto;      /* Centrado con margen vertical */
+    text-align: center;     /* Texto centrado */
+    padding: 0 20px;        /* Margen de seguridad lateral */
+}
+
+.hero-tienda h2 {
+    font-size: 2.5rem;            /* Tamaño de subtítulo */
+    margin-bottom: 30px;          /* Separación inferior */
+    color: var(--color-text-dark);  /* Color oscuro para mejor contraste */
+    border-bottom: 2px solid rgba(58, 46, 49, 0.1); /* Línea decorativa sutil */
+    padding-bottom: 10px;         /* Espacio hasta la línea */
+    display: inline-block;        /* La línea ocupa solo lo que mide el texto */
 }
 
 /* IMÁGENES DESTACADAS */
