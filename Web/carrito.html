@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Carrito de la compra de Suabelo.">
+        <meta name="author" content="[T] Adrián Díaz García">
+        <title>Carrito - Suabelo Resina Botánica</title>
+
+        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        
+        <style>
+            .contenedor-carrito { display: flex; gap: 30px; max-width: 1200px; margin: 0 auto; padding: 0 20px; align-items: flex-start; flex-wrap: wrap; }
+            .lista-articulos { flex: 1; min-width: 60%; background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+            .resumen-pedido { flex: 0 0 350px; background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+            .articulo-carrito { display: flex; align-items: center; gap: 20px; border-bottom: 1px solid var(--color-brand-muted); padding-bottom: 20px; margin-bottom: 20px; }
+            .articulo-carrito:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+            .articulo-carrito img { width: 100px; height: 100px; object-fit: cover; border-radius: 10px; }
+            .info-articulo { flex: 1; }
+            .info-articulo h3 { margin: 0 0 5px 0; font-size: 1.2rem; }
+            .boton-eliminar { color: #d9534f; background: none; border: none; cursor: pointer; font-size: 1.2rem; }
+            .boton-eliminar:hover { color: #c9302c; }
+            .resumen-pedido h3 { margin-top: 0; border-bottom: 2px solid var(--color-brand-muted); padding-bottom: 10px; }
+            .linea-resumen { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 1.1rem; }
+            .total-resumen { font-weight: bold; font-size: 1.4rem; color: var(--color-accent); border-top: 2px solid var(--color-brand-muted); padding-top: 15px; margin-top: 15px; }
+        </style>
+    </head>
+    <body>
+        <header>
+            <img src="img/Suabelo_LOGO.png" alt="Logo_de_Suabelo" class="logo">
+        </header>   
+
+        <nav class="menu_navegacion">
+            <a href="index.html">Inicio</a>
+            <a href="procesocreativo.html">Proceso de creación</a>
+            <a href="tienda.html">Tienda</a>
+            <a href="sobrenosotros.html">Sobre nosotros</a>
+            <a href="carrito.html" class="enlace-carrito active" aria-label="Ver carrito de la compra">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="badge-carrito"></span> 
+            </a>
+        </nav>
+
+        <main>
+            <section class="tienda-header">
+                <h1>Tu Selección</h1>
+                <p class="tienda-descripcion">Revisa las piezas antes de eternizarlas en tu colección.</p>
+            </section>
+
+            <div class="contenedor-carrito">
+                
+                <div class="lista-articulos">
+                    
+                    <div class="articulo-carrito">
+                        <img src="img/colgante-rosa.webp" alt="Colgante Alba">
+                        <div class="info-articulo">
+                            <h3>Colgante Alba</h3>
+                            <p>Resina y oro de 14k</p>
+                        </div>
+                        <div class="precio-articulo">
+                            <span class="precio">35,00 €</span>
+                        </div>
+                        <button class="boton-eliminar" aria-label="Eliminar artículo"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+
+                    <div class="articulo-carrito">
+                        <img src="img/pendientes-helecho.jpg" alt="Pendientes Bosque">
+                        <div class="info-articulo">
+                            <h3>Pendientes Bosque</h3>
+                            <p>Resina y plata de ley</p>
+                        </div>
+                        <div class="precio-articulo">
+                            <span class="precio">28,00 €</span>
+                        </div>
+                        <button class="boton-eliminar" aria-label="Eliminar artículo"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+
+                </div>
+
+                <div class="resumen-pedido">
+                    <h3>Resumen del pedido</h3>
+                    
+                    <div class="linea-resumen">
+                        <span>Subtotal</span>
+                        <span>63,00 €</span>
+                    </div>
+                    <div class="linea-resumen">
+                        <span>Envío (Península y Baleares)</span>
+                        <span>4,50 €</span>
+                    </div>
+                    
+                    <div class="linea-resumen total-resumen">
+                        <span>Total</span>
+                        <span>67,50 €</span>
+                    </div>
+
+                    <a href="#" class="boton-cta" style="width: 100%; text-align: center; margin-top: 20px;">Finalizar Compra</a>
+                </div>
+
+            </div>
+        </main>
+        
+        <footer>
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <p>&copy; 2026 Desarrollado por <strong>Adrián Díaz García</strong>.</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#">Política de Cookies</a></li>
+                        <li><a href="#">Términos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </footer>
+        <script src="js/carrito.js"></script>
+    </body>
+</html>

@@ -129,32 +129,6 @@ header {
 }
 
 /* =========================================
-   COMPONENTES REUTILIZABLES (BLOQUES LEGO)
-   ========================================= */
-.model-list {
-    list-style: none; /* Elimina los puntos (bullets) de la lista principal */
-    padding: 0;       /* Elimina el padding por defecto */
-    text-align: left; /* Alinea el texto a la izquierda para mejor lectura */
-}
-
-/* Estilo individual de cada tarjeta/item */
-.model-list > li {
-    background: rgba(255, 255, 255, 0.05); /* Fondo blanco semitransparente */
-    border-radius: 15px;                   /* Bordes redondeados */
-    padding: 30px;                         /* Espacio interno */
-    margin-bottom: 40px;                   /* Separación entre tarjetas */
-    border: 1px solid rgba(255,255,255,0.1); /* Borde muy sutil */
-}
-
-.model-list ol {
-    margin-left: 20px; /* Sangría para la lista numerada interna */
-}
-
-.model-list ol li {
-    margin-bottom: 10px; /* Separación entre características */
-}
-
-/* =========================================
    LISTAS DE RECURSOS (CAJA BLANCA)
    ========================================= */
 .link-list, .videos-list {
@@ -323,6 +297,11 @@ header {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     /* Desactiva clics en la burbuja para que no interfiera con el botón */
     pointer-events: none; 
+}
+
+/* Oculta la burbuja por completo si no tiene ningún texto/número dentro */
+.badge-carrito:empty {
+    display: none;
 }
 
 /* =========================================
