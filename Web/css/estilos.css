@@ -33,7 +33,7 @@ html {
 body { 
     font-family: Assistant, sans-serif;  /* Aplica la fuente definida en variables */
     background-color: var(--color-bg-light);   /* Color de fondo global */
-    color: var(--color-text);           /* Color de texto global */
+    color: var(--color-text-dark);           /* Color de texto global */
     line-height: 1.6;                 /* Altura de línea para mejor legibilidad */
     margin: 0;              /* Elimina los márgenes por defecto del navegador */
     
@@ -146,14 +146,6 @@ header {
     border: 1px solid rgba(255,255,255,0.1); /* Borde muy sutil */
 }
 
-.model-list h3 {
-    text-align: center; /* Título de la IA centrado */
-    color: #ffd700;     /* Color dorado para destacar */
-    font-size: 1.8rem;  
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-
 .model-list ol {
     margin-left: 20px; /* Sangría para la lista numerada interna */
 }
@@ -190,13 +182,13 @@ header {
 }
 
 .link-list a, .videos-list a {
-    color: var(--color-bg-light); /* Enlaces en morado */
+    color: var(--color-bg-light); /* Enlaces en fucsia */
     font-weight: bold;            /* Negrita */
     text-decoration: underline;   /* Subrayado */
 }
 
 .link-list a:hover, .videos-list a:hover {
-    color: #d900ff; /* Cambio de color al pasar el ratón (Feedback) */
+    color: var(--color-bg-light); /* Cambio de color al pasar el ratón (Feedback) */
 }
 
 /* =========================================
@@ -241,7 +233,7 @@ header {
 }
 
 /* =========================================
-   LAS TARJETAS (viewitrinas individuales)
+   LAS TARJETAS (vitrinas individuales)
    ========================================= */
 .producto-card img {
     width: 100%;
@@ -343,7 +335,8 @@ header {
     padding: 0 20px;        /* Margen de seguridad lateral */
 }
 
-.hero-intro h2 {
+.hero-intro h2,
+.hero-tienda h2 {
     font-size: 2.5rem;            /* Tamaño de subtítulo */
     margin-bottom: 30px;          /* Separación inferior */
     color: var(--color-text-dark);  /* Color oscuro para mejor contraste */
@@ -366,15 +359,6 @@ header {
     margin: 40px auto;      /* Centrado con margen vertical */
     text-align: center;     /* Texto centrado */
     padding: 0 20px;        /* Margen de seguridad lateral */
-}
-
-.hero-tienda h2 {
-    font-size: 2.5rem;            /* Tamaño de subtítulo */
-    margin-bottom: 30px;          /* Separación inferior */
-    color: var(--color-text-dark);  /* Color oscuro para mejor contraste */
-    border-bottom: 2px solid rgba(58, 46, 49, 0.1); /* Línea decorativa sutil */
-    padding-bottom: 10px;         /* Espacio hasta la línea */
-    display: inline-block;        /* La línea ocupa solo lo que mide el texto */
 }
 
 /* =========================================
@@ -491,15 +475,6 @@ header {
 .tienda-header h1 {
     font-size: 2.2rem; /* Ligeramente más pequeño que el H1 del inicio */
     margin-bottom: 10px; /* Acercamos el título al texto descriptivo */
-}
-
-.tienda-header h2 {
-    font-size: 1.8rem;            /* Tamaño de subtítulo */
-    margin-bottom: 30px;          /* Separación inferior */
-    color: var(--color-text-dark);  /* Color oscuro para mejor contraste */
-    border-bottom: 2px solid rgba(58, 46, 49, 0.1); /* Línea decorativa sutil */
-    padding-bottom: 10px;         /* Espacio hasta la línea */
-    display: inline-block;        /* La línea ocupa solo lo que mide el texto */
 }
 
 .tienda-descripcion {
