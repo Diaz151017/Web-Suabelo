@@ -90,6 +90,14 @@ footer {
     gap: 20px;
 } 
 
+.footer-logo {
+    color: var(--color-primary); /* Texto blanco */
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.8;               /* Un poco transparente por defecto */
+    transition: opacity 0.3s;
+}
+
 /* Enlaces del Footer */
 .footer-links ul {
     list-style: none;   /* Sin puntos */
@@ -279,34 +287,6 @@ header {
 .menu_navegacion a.active {
     background-color: var(--color-bg-light); /* Marca visual para la página actual */
     color: var(--color-primary);
-}
-
-/* =========================================
-   CARRITO DE COMPRA (NAV)
-   ========================================= */
-.menu_navegacion .enlace-carrito {
-    position: relative; /* Clave para que la burbuja de cantidad se posicione respecto al botón */
-    padding: 10px 15px; 
-}
-
-.badge-carrito {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: var(--color-accent); /* Tu verde botánico */
-    color: white;
-    font-size: 0.8rem;
-    font-weight: bold;
-    padding: 2px 7px;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    /* Desactiva clics en la burbuja para que no interfiera con el botón */
-    pointer-events: none; 
-}
-
-/* Oculta la burbuja por completo si no tiene ningún texto/número dentro */
-.badge-carrito:empty {
-    display: none;
 }
 
 /* =========================================
