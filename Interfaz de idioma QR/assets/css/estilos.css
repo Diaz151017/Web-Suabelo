@@ -1,0 +1,556 @@
+/* =========================================
+   ESTILOS GLOBALES VARIABLES CSS (PALETA DE COLORES)
+   ========================================= */
+:root {
+    --color-primary: #ffffff;         /* Blanco puro para contrastes fuertes */
+    --color-bg-light: #C25875;        /* El rosa original y elegante de tu logo (Cabecera) */
+    
+    /* LOS TONOS BOTÁNICOS */
+    --color-bg-main: #FAFAF8;         /* Blanco roto cálido (color lino o crema muy suave) para el fondo */
+    --color-brand-muted: #EADCE0;     /* Un rosa polvo casi gris, para detalles secundarios */
+    --color-text-dark: #3A2E31;       /* Gris carbón con un subtono ciruela, mucho más elegante que el negro puro */
+    --color-accent: #8A9A86;          /* Un verde salvia apagado. La botánica necesita hojas, no solo flores. */
+}
+
+/* =========================================
+   RESET BÁSICO 
+ ========================================= */
+* {
+    box-sizing: border-box;  /* El padding y borde se incluyen en el tamaño total */
+}
+
+/* =========================================
+   ARQUITECTURA DEL HTML
+   ========================================= */
+html { 
+    scroll-behavior: smooth; /* Desplazamiento suave al navegar por anclas */
+    height: 100%;            /* Asegura altura completa de la ventana */
+}
+
+/* =========================================
+   ESTILOS DEL BODY (CUERPO)
+   ========================================= */
+body { 
+    font-family: Assistant, sans-serif;  /* Aplica la fuente definida en variables */
+    background-color: var(--color-bg-light);   /* Color de fondo global */
+    color: var(--color-text-dark);           /* Color de texto global */
+    line-height: 1.6;                 /* Altura de línea para mejor legibilidad */
+    margin: 0;              /* Elimina los márgenes por defecto del navegador */
+    
+    /* Configuración para "Sticky Footer" (Pie de página pegado abajo) */
+    min-height: 100vh;      /* Altura mínima del 100% de la ventana visible */
+    display: flex;          /* Activamos el modelo de caja flexible */          
+    flex-direction: column;   /* Elementos apilados verticalmente (Header, Main, Footer) */ 
+    overflow-x: hidden; /* Corta por lo sano cualquier elemento que intente salirse por los lados */
+}
+
+/* =========================================
+   ESTILOS DE TIPOGRAFÍA Y ETIQUETAS BASE
+   ========================================= */
+h1 {
+    font-size: 3.5rem;      /* Tamaño de fuente grande para el título principal */
+    margin-bottom: 20px;    /* Separación inferior */
+    color: var(--color-text-dark); /* Usa el color blanco definido */
+}
+
+/* =========================================
+   ESTILOS DEL MAIN (CONTENIDO PRINCIPAL) 
+   ========================================= */
+main {
+    flex: 1;
+    background-color: #EFEBE9; /* Pon aquí el HEX del color que prefieras */
+    width: 100%;
+    padding-top: 40px; /* Le damos aire al h1 por arriba */
+    padding-bottom: 40px;
+    color: var(--color-text-dark); /* Color de texto más oscuro para mejor contraste sobre el fondo claro */
+}
+
+/* =========================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================= */
+footer { 
+    background-color: rgba(0,0,0,0.2); /* Fondo ligeramente más oscuro */
+    padding: 3rem 0;                   /* Altura del footer */
+    margin-top: auto;                  /* Empuja hacia abajo si sobra espacio */
+} 
+
+.footer-container { 
+    max-width: 1200px;           /* Ancho máximo contenido */
+    margin: 0 auto;              /* Centrado */
+    display: flex;               /* Flexbox para columnas */
+    justify-content: space-between; /* Distribución espaciada */
+    align-items: center;         /* Alineación vertical */
+    padding: 0 2rem; 
+    flex-wrap: wrap;             /* Adaptable a móviles */
+    gap: 20px;
+} 
+
+/* Enlaces del Footer */
+.footer-links ul {
+    list-style: none;   /* Sin puntos */
+    padding: 0;
+    margin: 0;
+    display: flex;      /* Enlaces en horizontal */
+    gap: 20px;          /* Separación */
+}
+
+.footer-links a, .footer-social a {
+    color: var(--color-primary); /* Texto blanco */
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.8;               /* Un poco transparente por defecto */
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    opacity: 1;                 /* Totalmente visible al pasar ratón */
+    text-decoration: underline;
+}
+
+/* Redes Sociales */
+.footer-social {
+    display: flex;
+    gap: 15px; /* Separación entre iconos */
+}
+
+.footer-social i {
+    font-size: 1.2rem; /* Tamaño de iconos */
+}
+
+/* =========================================
+   ESTILOS DEL HEADER (CABECERA)
+   ========================================= */
+header {       
+    margin: 60px auto 0 auto;  /* Margen superior grande, centrado horizontal, inferior pequeño */
+    max-width: 1200px;            /* Ancho máximo del contenido */
+    width: 100%;                  /* Ocupa el ancho disponible */
+    text-align: center;           /* Centra el texto y elementos inline */
+    padding: 0 20px;              /* Espacio interno lateral */
+}
+
+/* =========================================
+   LISTAS DE RECURSOS (CAJA BLANCA)
+   ========================================= */
+.link-list, .videos-list {
+    background: white;           /* Fondo blanco sólido */
+    border-radius: 20px;         /* Bordes redondeados */
+    padding: 30px 50px;          /* Espacio interno generoso */
+    width: fit-content;          /* La caja se ajusta al contenido */
+    max-width: 100%;             /* No desborda en móviles */
+    margin: 0 auto 40px auto;    /* Centrado horizontal */
+    text-align: left;            /* Texto alineado a la izquierda */
+    color: var(--color-bg-light); /* Texto morado oscuro (contraste sobre blanco) */
+}
+
+.link-list h3, .videos-list h3 {
+    color: var(--color-bg-light); /* Títulos en morado */
+}
+
+.link-list ol, .videos-list ol {
+    padding-left: 20px; /* Sangría de la lista */
+}
+
+.link-list li, .videos-list li {
+    margin-bottom: 15px; /* Separación entre enlaces */
+    color: var(--color-bg-light);
+}
+
+.link-list a, .videos-list a {
+    color: var(--color-bg-light); /* Enlaces en fucsia */
+    font-weight: bold;            /* Negrita */
+    text-decoration: underline;   /* Subrayado */
+}
+
+.link-list a:hover, .videos-list a:hover {
+    color: var(--color-bg-light); /* Cambio de color al pasar el ratón (Feedback) */
+}
+
+/* =========================================
+   BOTONES (CTA - Call To Action)
+   ========================================= */
+.boton-cta {
+    display: block;             /* Deja de ser texto y se convierte en un bloque estructural */
+    width: fit-content;         /* Evita que el bloque ocupe toda la pantalla de lado a lado */
+    margin: 40px auto;          /* Centrado mágico: empuja igual desde la izquierda y la derecha */
+
+    padding: 15px 35px;             /* Tamaño del botón */
+    background-color: var(--color-primary); /* Fondo blanco */
+    color: var(--color-bg-light);           /* Texto morado */
+    text-decoration: none;          /* Sin subrayado */
+    font-weight: bold;              
+    font-size: 1.1rem;
+    border-radius: 50px;            /* Forma de píldora */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación */
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Sombra difusa para dar profundidad */
+}
+
+.boton-cta:hover {
+    background-color: var(--color-bg-light); /* Fondo morado al pasar el ratón */
+    color: var(--color-primary);             /* Texto blanco al pasar el ratón */
+    transform: scale(1.05); /* Efecto pop/zoom */
+    box-shadow: 0 0 20px rgba(255,255,255,0.5); /* Resplandor exterior */
+    
+}
+
+/* =========================================
+   EL CONTENEDOR PRINCIPAL (La estantería) 
+   ========================================= */
+.tienda-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px; /* El espacio exacto entre cada tarjeta de producto */
+    
+    padding: 40px 20px;
+    max-width: 1200px; /* Para que no se estire hasta el infinito en pantallas gigantes */
+    margin: 0 auto;    /* Lo centramos */
+}
+
+/* =========================================
+   LAS TARJETAS (vitrinas individuales)
+   ========================================= */
+.producto-card img {
+    width: 100%;
+    height: 250px; /* Forzamos una altura fija para todas */
+    object-fit: cover; /* Hace que la imagen llene el espacio sin deformarse, recortando lo sobrante */
+    border-radius: 10px;
+}
+
+/* =========================================
+   ALINEACIÓN PERFECTA DEL CONTENIDO 
+   =========================================*/
+.producto-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    /* Añadimos Flexbox a la tarjeta para empujar el botón siempre al fondo */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; 
+}
+
+.producto-card:hover {
+    transform: translateY(-10px); /* La tarjeta "levita" un poco hacia arriba */
+}
+
+/* =========================================
+   SECCIONES ESPECÍFICAS (HERO, MODELOS, RECURSOS, TIENDA)
+     Y ELEMENTOS DE NAVEGACIÓN
+   ========================================= */
+.menu_navegacion {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    padding: 15px 0; 
+    background: white;
+    border-radius: 0;       
+    margin-top: 30px;       
+    margin-bottom: 0;    
+}
+
+.menu_navegacion a {
+    display: inline-block;           /* Comportamiento de bloque en línea */
+    text-decoration: none;           /* Elimina el subrayado del enlace */
+    color: var(--color-bg-light);    /* Color de texto morado (invertido) */
+    font-weight: bold;               /* Texto en negrita */
+    padding: 10px 20px;              /* Zona clicleable más amplia */
+    border-radius: 50px;             /* Bordes redondeados en cada botón */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Sombra difusa para dar profundidad */
+}
+
+.menu_navegacion a:hover { 
+    background-color: var(--color-bg-light); /* Fondo morado al pasar el ratón */
+    color: var(--color-primary);             /* Texto blanco al pasar el ratón */
+    transform: scale(1.05);                  /* Ligero aumento de tamaño (Zoom) */
+}
+
+.menu_navegacion a.active {
+    background-color: var(--color-bg-light); /* Marca visual para la página actual */
+    color: var(--color-primary);
+}
+
+/* =========================================
+   CARRITO DE COMPRA (NAV)
+   ========================================= */
+.menu_navegacion .enlace-carrito {
+    position: relative; /* Clave para que la burbuja de cantidad se posicione respecto al botón */
+    padding: 10px 15px; 
+}
+
+.badge-carrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--color-accent); /* Tu verde botánico */
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 2px 7px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    /* Desactiva clics en la burbuja para que no interfiera con el botón */
+    pointer-events: none; 
+}
+
+/* Oculta la burbuja por completo si no tiene ningún texto/número dentro */
+.badge-carrito:empty {
+    display: none;
+}
+
+/* =========================================
+   SECCIONES HERO (INTRODUCCIÓN)
+   ========================================= */
+.hero-intro {
+    max-width: 900px;       /* Limita el ancho del texto para leer mejor */
+    margin: 40px auto;      /* Centrado con margen vertical */
+    text-align: center;     /* Texto centrado */
+    padding: 0 20px;        /* Margen de seguridad lateral */
+}
+
+.hero-intro h2,
+.hero-tienda h2 {
+    font-size: 2.5rem;            /* Tamaño de subtítulo */
+    margin-bottom: 30px;          /* Separación inferior */
+    color: var(--color-text-dark);  /* Color oscuro para mejor contraste */
+    border-bottom: 2px solid rgba(58, 46, 49, 0.1); /* Línea decorativa sutil */
+    padding-bottom: 10px;         /* Espacio hasta la línea */
+    display: inline-block;        /* La línea ocupa solo lo que mide el texto */
+}
+
+.hero-intro p {
+    font-size: 1.1rem;      /* Texto ligeramente más grande que el estándar */
+    margin-bottom: 30px;    
+    opacity: 0.9;           /* Ligera transparencia para jerarquía visual */
+    max-width: 800px;       /* Ancho máximo del párrafo */
+    margin-left: auto;      /* Centrado automático izquierda */
+    margin-right: auto;     /* Centrado automático derecha */    
+}
+
+.hero-tienda {
+    max-width: 900px;       /* Limita el ancho del texto para leer mejor */
+    margin: 40px auto;      /* Centrado con margen vertical */
+    text-align: center;     /* Texto centrado */
+    padding: 0 20px;        /* Margen de seguridad lateral */
+}
+
+/* =========================================
+   IMÁGENES DESTACADAS 
+   ========================================= */
+
+.logo {
+    display: block;           /* La convertimos en bloque para que ocupe su propia línea */
+    margin: 0 auto 30px auto; /* Centrado mágico: 'auto' a los lados empuja la imagen al centro */
+    max-width: 550px;         /* Cambia este 250px hasta que el logo tenga el tamaño que buscas */
+    height: auto;             /* Mantiene la proporción original para que no se deforme */
+}
+
+.hero-image {
+    display: flex;              /* Flexbox para centrar la imagen */
+    justify-content: center;    /* Centrado horizontal */
+    width: 100%;                
+    margin-bottom: 30px;        /* Espacio debajo de la imagen */
+}
+
+.hero-image img {
+    max-width: 100%;        /* La imagen nunca será más ancha que su contenedor (Responsive) */
+    height: auto;           /* Mantiene la proporción de aspecto */
+    border-radius: 15px;    /* Bordes redondeados */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Sombra difusa para dar profundidad */
+}
+
+/* =========================================
+   ESTRUCTURA DE LA TIENDA (LAYOUT)
+   ========================================= */
+.contenedor-tienda {
+    display: flex;
+    gap: 30px;
+    max-width: 95%; /* Para que no se estire demasiado en pantallas gigantes */
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: flex-start; /* Evita que la barra lateral se estire verticalmente */
+}
+
+/* =========================================
+   BARRA LATERAL DE FILTROS
+   ========================================= */
+.filtros-tienda {
+    flex: 0 0 250px; /* Ancho fijo para la barra lateral */
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.filtros-tienda h3 {
+    margin-top: 0;
+    color: var(--color-bg-light);
+    border-bottom: 2px solid var(--color-brand-muted);
+    padding-bottom: 10px;
+}
+
+.filtros-tienda ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filtros-tienda li {
+    margin-bottom: 10px;
+}
+
+.filtros-tienda a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    display: block;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.filtros-tienda a:hover, .filtros-tienda a.filtro-activo {
+    background-color: var(--color-brand-muted);
+    color: var(--color-text-dark);
+    font-weight: bold;
+}
+
+/* =========================================
+   AJUSTES PARA LA GALERÍA DENTRO DE LA TIENDA
+   ========================================= */
+/* Sobrescribimos ligeramente tu .tienda-galeria para que encaje junto a los filtros */
+.contenedor-tienda .tienda-galeria {
+    max-width: none; /* Quitamos el límite de ancho para que se adapte al espacio disponible */
+    padding: 0; /* Quitamos el padding extra porque el contenedor ya lo tiene */
+    margin: 0; 
+}
+
+.precio {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--color-accent); /* Usamos el verde salvia apagado */
+    margin: 10px 0;
+}
+
+.producto-card .boton-cta {
+    margin: 10px auto 0 auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    width: 100%; /* El botón ocupa el ancho de la tarjeta */
+}
+
+.tienda-header {
+    max-width: 800px;       
+    margin: 10px auto 30px auto; /* Reducimos el margen superior e inferior drásticamente */
+    text-align: center;     
+    padding: 0 20px;        
+}
+
+.tienda-header h1 {
+    font-size: 2.2rem; /* Ligeramente más pequeño que el H1 del inicio */
+    margin-bottom: 10px; /* Acercamos el título al texto descriptivo */
+}
+
+.tienda-descripcion {
+    font-size: 1.1rem;
+    color: var(--color-text-dark);  
+    border-bottom: 1px solid rgba(58, 46, 49, 0.1); /* Línea más fina */
+    padding-bottom: 15px;         
+    display: inline-block;        
+    opacity: 0.8; /* Le quitamos un poco de peso visual frente a los productos */
+}
+
+/* =========================================
+   ÁREA DE PRODUCTOS Y BARRA DE ORDENACIÓN
+   ========================================= */
+/* Este contenedor sustituye a la galería a la hora de pelear por el espacio con los filtros */
+.area-productos {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    max-width: none;
+}
+
+.controles-tienda {
+    display: flex;
+    justify-content: space-between; /* Texto a la izquierda, selector a la derecha */
+    align-items: center;
+    background: white;
+    padding: 15px 25px;
+    border-radius: 15px;
+    margin-bottom: 30px; /* Espacio antes de que empiecen las tarjetas */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.contador-resultados {
+    margin: 0;
+    color: var(--color-text-dark);
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.selector-orden label {
+    margin-right: 10px;
+    color: var(--color-text-dark);
+    font-weight: bold;
+}
+
+.selector-orden select {
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--color-brand-muted);
+    color: var(--color-text-dark);
+    font-family: inherit; /* Usa la fuente Assistant automáticamente */
+    background-color: var(--color-bg-main);
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.selector-orden select:focus {
+    border-color: var(--color-accent);
+}
+
+/* =========================================
+   MEDIA QUERIES (MÓVILES Y TABLETS)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Apilamos el contenedor principal */
+    .contenedor-tienda {
+        flex-direction: column; /* Cambia la dirección de horizontal a vertical */
+    }
+
+    /* 2. La barra de filtros pasa a ocupar todo el ancho arriba */
+    .filtros-tienda {
+        flex: none; /* Le quitamos el ancho fijo de 250px */
+        width: 100%; 
+        margin-bottom: 10px; /* Separación con los productos */
+    }
+
+    /* 3. La barra de ordenar se vuelve vertical para que no se salga de la pantalla */
+    .controles-tienda {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* 4. Ajustes generales de texto para que no desborde en pantallas pequeñas */
+    h1 {
+        font-size: 2.5rem; 
+    }
+    
+    .tienda-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .menu_navegacion {
+        flex-direction: column; /* Apila los enlaces del menú en móviles */
+        width: 100%;
+    }
+}
