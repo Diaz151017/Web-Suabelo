@@ -85,6 +85,14 @@ footer {
     gap: 20px;
 } 
 
+.footer-logo {
+    color: var(--color-primary); /* Texto blanco */
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.8;               /* Un poco transparente por defecto */
+    transition: opacity 0.3s;
+}
+
 /* Enlaces del Footer */
 .footer-links ul {
     list-style: none;   /* Sin puntos */
