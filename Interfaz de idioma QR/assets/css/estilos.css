@@ -17,14 +17,17 @@
  ========================================= */
 * {
     box-sizing: border-box;  /* El padding y borde se incluyen en el tamaño total */
+    padding: 0;
+    margin: 0;
 }
 
 /* =========================================
    ARQUITECTURA DEL HTML
    ========================================= */
 html { 
-    scroll-behavior: smooth; /* Desplazamiento suave al navegar por anclas */
-    height: 100%;            /* Asegura altura completa de la ventana */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 /* =========================================
@@ -36,7 +39,9 @@ body {
     color: var(--color-text-dark);           /* Color de texto global */
     line-height: 1.6;                 /* Altura de línea para mejor legibilidad */
     margin: 0;              /* Elimina los márgenes por defecto del navegador */
-    
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     /* Configuración para "Sticky Footer" (Pie de página pegado abajo) */
     min-height: 100vh;      /* Altura mínima del 100% de la ventana visible */
     display: flex;          /* Activamos el modelo de caja flexible */          
