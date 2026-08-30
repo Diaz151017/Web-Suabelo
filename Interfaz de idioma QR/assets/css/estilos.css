@@ -93,7 +93,7 @@ footer {
 .footer-logo {
     color: var(--color-primary); /* Texto blanco */
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     opacity: 0.8;               /* Un poco transparente por defecto */
     transition: opacity 0.3s;
 }
@@ -110,7 +110,7 @@ footer {
 .footer-links a, .footer-social a {
     color: var(--color-primary); /* Texto blanco */
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     opacity: 0.8;               /* Un poco transparente por defecto */
     transition: opacity 0.3s;
 }
@@ -127,7 +127,7 @@ footer {
 }
 
 .footer-social i {
-    font-size: 1.2rem; /* Tamaño de iconos */
+    font-size: 1.5rem; /* Tamaño de iconos */
 }
 
 /* =========================================
